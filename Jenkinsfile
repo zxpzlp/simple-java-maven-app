@@ -12,5 +12,15 @@ pipeline {
 				sleep 10
 			}
 		}
+		stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+            post {
+                always {
+                  junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
 	}
 }
