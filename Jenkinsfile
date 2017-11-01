@@ -9,7 +9,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				sh 'mvn -B -DskipTests clean package'
-				sleep 'unit:MINUTES','time:2'
+				sleep 10
 			}
 		}
 	}
